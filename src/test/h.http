@@ -1,0 +1,27 @@
+GET http://localhost:9000/api/runs
+### Add a new run
+POST http://localhost:9000/api/runs
+Content-Type: application/json
+
+{
+  "id": 2,
+  "title": " wednesday RUNNING",
+  "startedOn": "2025-02-12T01:10:20.2546369",
+  "completedOn": "2025-02-12T02:10:20.2546369",
+  "miles": 7,
+  "location": "OUTDOOR"
+}
+### add a new get
+GET http://localhost:9000/api/runs
+###new post request
+POST http://localhost:9000/api/runs
+Content-Type: application/json
+
+{
+  "id": 11,
+  "title": " wednesday RUNNING",
+  "startedOn": "2025-02-12T01:10:20.2546369",
+  "completedOn": "2025-02-12T02:10:20.2546369",
+  "miles": 7,
+  "location": "OUTDOOR"
+}
