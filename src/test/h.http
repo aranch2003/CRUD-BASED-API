@@ -25,3 +25,51 @@ Content-Type: application/json
   "miles": 7,
   "location": "OUTDOOR"
 }
+### uodate testing
+PUT http://localhost:9000/api/runs/2
+Content-Type: application/json
+
+{
+  "title": "Updated Run Title",
+  "startedOn": "2025-02-12T02:00:00",
+  "completedOn": "2025-02-12T03:00:00",
+  "miles": 5,
+  "location": "OUTDOOR"
+}
+### delte testing
+DELETE http://localhost:9000/api/runs/1
+
+###validation check 1
+POST http://localhost:9000/api/runs
+Content-Type: application/json
+
+{
+  "title": "",
+  "startedOn": "2025-02-12T02:00:00",
+  "completedOn": "2025-02-12T03:00:00",
+  "miles": 3,
+  "location": "INDOOR"
+}
+### validation check  2
+POST http://localhost:9000/api/runs
+Content-Type: application/json
+
+{
+  "title": "Invalid Run",
+  "startedOn": "2025-02-12T02:00:00",
+  "completedOn": "2025-02-12T03:00:00",
+  "miles": -2,
+  "location": "OUTDOOR"
+}
+### validation check 3
+
+POST http://localhost:9000/api/runs
+Content-Type: application/json
+
+{
+  "title": "Invalid Run",
+  "startedOn": "2026-02-12T02:00:00",
+  "completedOn": "2025-02-12T03:00:00",
+  "miles": 20,
+  "location": "OUTDOOR"
+}

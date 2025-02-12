@@ -39,5 +39,17 @@ public class Controller {
     void create(@Valid @RequestBody Run run){
        runRepo.create(run);
     }
-
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @PutMapping("/{id}")
+    void update(@Valid @RequestBody Run run,@PathVariable Integer id)
+    {
+        runRepo.update(run,id);
+    }
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    @DeleteMapping("/{id}")
+    void delete(@PathVariable Integer id)
+    {
+        runRepo.delete(id);
+    }
 }
+

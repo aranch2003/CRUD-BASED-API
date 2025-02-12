@@ -24,6 +24,15 @@ public class RunRepo {
     {
      runs.add(run);
     }
+    void update(Run run,Integer id){
+        Optional<Run> existingRun =findById(id);
+        if(existingRun.isPresent()){
+            runs.set(runs.indexOf(existingRun.get()),run);
+        }
+    }
+    void delete(Integer id) {
+        runs.removeIf(run -> run.id().equals(id));
+    }
     @PostConstruct//2nd learning
     private void init(){
 
